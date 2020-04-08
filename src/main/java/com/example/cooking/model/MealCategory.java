@@ -14,4 +14,5 @@ public class MealCategory {
     private Long id;
     private String name;
     private String description;
+    private Float mealCategoryGroupCoverageCoefficient;
 }

@@ -22,7 +22,6 @@ public class Ingredient {
     private PrimaryMeasureType primaryMeasureType;
     @ManyToMany
     private Set<MeasureType> measureEntityTypes;
-    private Float mealCategoryGroupCoverageCoefficient;
     private Integer caloriesPerHundredGrams;
     private Double proteinPerHundredGrams;
     private Double fatPerHundredGrams;

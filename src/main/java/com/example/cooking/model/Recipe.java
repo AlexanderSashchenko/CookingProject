@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+
 import lombok.Data;
 
 @Entity
@@ -25,7 +27,7 @@ public class Recipe {
     private Set<MealTime> mealTimes;
     @ManyToMany
     private Map<Ingredient, IngredientQuantity> ingredients;
-    private Integer portionsQuantity;
-    private Integer portionWeight;
+    @OneToMany
+    private Set<Portion> portions;
     private Integer preparationTime;
 }
