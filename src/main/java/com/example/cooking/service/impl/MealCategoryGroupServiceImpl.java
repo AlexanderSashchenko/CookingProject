@@ -3,7 +3,6 @@ package com.example.cooking.service.impl;
 import com.example.cooking.model.MealCategoryGroup;
 import com.example.cooking.repository.MealCategoryGroupRepository;
 import com.example.cooking.service.MealCategoryGroupService;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Optional;
 

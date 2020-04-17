@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -13,6 +14,7 @@ public class MealEating {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private LocalDateTime localDateTime;
     @ManyToMany
     private List<Recipe> recipes;
     @ManyToMany
