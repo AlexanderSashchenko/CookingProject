@@ -4,8 +4,6 @@ import com.example.cooking.model.DailyMenu;
 import com.example.cooking.repository.DailyMenuRepository;
 import com.example.cooking.service.DailyMenuService;
 
-import java.util.Optional;
-
 public class DailyMenuServiceImpl implements DailyMenuService {
 
     private final DailyMenuRepository dailyMenuRepository;
@@ -20,8 +18,8 @@ public class DailyMenuServiceImpl implements DailyMenuService {
     }
 
     @Override
-    public Optional<DailyMenu> get(Long id) {
-        return dailyMenuRepository.findById(id);
+    public DailyMenu get(Long id) {
+        return dailyMenuRepository.findById(id).orElse(new DailyMenu());
     }
 
     @Override

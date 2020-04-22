@@ -4,8 +4,6 @@ import com.example.cooking.model.MealCategoryGroup;
 import com.example.cooking.repository.MealCategoryGroupRepository;
 import com.example.cooking.service.MealCategoryGroupService;
 
-import java.util.Optional;
-
 public class MealCategoryGroupServiceImpl implements MealCategoryGroupService {
 
     private final MealCategoryGroupRepository mealCategoryGroupRepository;
@@ -20,8 +18,8 @@ public class MealCategoryGroupServiceImpl implements MealCategoryGroupService {
     }
 
     @Override
-    public Optional<MealCategoryGroup> get(Long id) {
-        return mealCategoryGroupRepository.findById(id);
+    public MealCategoryGroup get(Long id) {
+        return mealCategoryGroupRepository.getOne(id);
     }
 
     @Override

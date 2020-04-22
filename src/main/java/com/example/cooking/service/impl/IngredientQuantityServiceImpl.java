@@ -4,13 +4,12 @@ import com.example.cooking.model.IngredientQuantity;
 import com.example.cooking.repository.IngredientQuantityRepository;
 import com.example.cooking.service.IngredientQuantityService;
 
-import java.util.Optional;
-
 public class IngredientQuantityServiceImpl implements IngredientQuantityService {
 
     private final IngredientQuantityRepository ingredientQuantityRepository;
 
-    public IngredientQuantityServiceImpl(IngredientQuantityRepository ingredientQuantityRepository) {
+    public IngredientQuantityServiceImpl(
+            IngredientQuantityRepository ingredientQuantityRepository) {
         this.ingredientQuantityRepository = ingredientQuantityRepository;
     }
 
@@ -20,8 +19,8 @@ public class IngredientQuantityServiceImpl implements IngredientQuantityService 
     }
 
     @Override
-    public Optional<IngredientQuantity> get(Long id) {
-        return ingredientQuantityRepository.findById(id);
+    public IngredientQuantity get(Long id) {
+        return ingredientQuantityRepository.findById(id).orElse(new IngredientQuantity());
     }
 
     @Override

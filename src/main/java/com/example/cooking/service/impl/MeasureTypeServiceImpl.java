@@ -4,8 +4,6 @@ import com.example.cooking.model.MeasureType;
 import com.example.cooking.repository.MeasureTypeRepository;
 import com.example.cooking.service.MeasureTypeService;
 
-import java.util.Optional;
-
 public class MeasureTypeServiceImpl implements MeasureTypeService {
 
     private final MeasureTypeRepository measureTypeRepository;
@@ -20,8 +18,9 @@ public class MeasureTypeServiceImpl implements MeasureTypeService {
     }
 
     @Override
-    public Optional<MeasureType> get(Long id) {
-        return measureTypeRepository.findById(id);
+    public MeasureType get(Long id) {
+        return measureTypeRepository.findById(id).orElseThrow(()
+                -> new RuntimeException("Measure type was not found!"));
     }
 
     @Override

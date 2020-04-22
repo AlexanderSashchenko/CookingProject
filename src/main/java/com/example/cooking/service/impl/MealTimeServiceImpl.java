@@ -4,8 +4,6 @@ import com.example.cooking.model.MealTime;
 import com.example.cooking.repository.MealTimeRepository;
 import com.example.cooking.service.MealTimeService;
 
-import java.util.Optional;
-
 public class MealTimeServiceImpl implements MealTimeService {
 
     private final MealTimeRepository mealTimeRepository;
@@ -20,8 +18,8 @@ public class MealTimeServiceImpl implements MealTimeService {
     }
 
     @Override
-    public Optional<MealTime> get(Long id) {
-        return mealTimeRepository.findById(id);
+    public MealTime get(Long id) {
+        return mealTimeRepository.getOne(id);
     }
 
     @Override

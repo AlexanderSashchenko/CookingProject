@@ -3,8 +3,7 @@ package com.example.cooking.service.impl;
 import com.example.cooking.model.Recipe;
 import com.example.cooking.repository.RecipeRepository;
 import com.example.cooking.service.RecipeService;
-
-import java.util.Optional;
+import java.util.List;
 
 public class RecipeServiceImpl implements RecipeService {
 
@@ -20,13 +19,19 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public Optional<Recipe> get(Long id) {
-        return recipeRepository.findById(id);
+    public Recipe get(Long id) {
+        return recipeRepository.findById(id).orElseThrow(() ->
+                new RuntimeException("Recipe was not found!"));
     }
 
     @Override
     public Recipe update(Recipe recipe) {
         return recipeRepository.save(recipe);
+    }
+
+    @Override
+    public List<Recipe> getAll() {
+        return recipeRepository.findAll();
     }
 
     @Override

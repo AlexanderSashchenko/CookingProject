@@ -4,13 +4,12 @@ import com.example.cooking.model.PrimaryMeasureType;
 import com.example.cooking.repository.PrimaryMeasureTypeRepository;
 import com.example.cooking.service.PrimaryMeasureTypeService;
 
-import java.util.Optional;
-
 public class PrimaryMeasureTypeServiceImpl implements PrimaryMeasureTypeService {
 
     private final PrimaryMeasureTypeRepository primaryMeasureTypeRepository;
 
-    public PrimaryMeasureTypeServiceImpl(PrimaryMeasureTypeRepository primaryMeasureTypeRepository) {
+    public PrimaryMeasureTypeServiceImpl(
+            PrimaryMeasureTypeRepository primaryMeasureTypeRepository) {
         this.primaryMeasureTypeRepository = primaryMeasureTypeRepository;
     }
 
@@ -20,8 +19,8 @@ public class PrimaryMeasureTypeServiceImpl implements PrimaryMeasureTypeService 
     }
 
     @Override
-    public Optional<PrimaryMeasureType> get(Long id) {
-        return primaryMeasureTypeRepository.findById(id);
+    public PrimaryMeasureType get(Long id) {
+        return primaryMeasureTypeRepository.getOne(id);
     }
 
     @Override

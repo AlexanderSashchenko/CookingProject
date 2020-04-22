@@ -3,9 +3,7 @@ package com.example.cooking.service.impl;
 import com.example.cooking.model.Ingredient;
 import com.example.cooking.repository.IngredientRepository;
 import com.example.cooking.service.IngredientService;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.Optional;
+import java.util.List;
 
 public class IngredientServiceImpl implements IngredientService {
 
@@ -21,13 +19,19 @@ public class IngredientServiceImpl implements IngredientService {
     }
 
     @Override
-    public Optional<Ingredient> get(Long id) {
-        return ingredientRepository.findById(id);
+    public Ingredient get(Long id) {
+        return ingredientRepository.findById(id).orElseThrow(()
+                -> new RuntimeException("Ingredient was not found!"));
     }
 
     @Override
     public Ingredient update(Ingredient ingredient) {
         return ingredientRepository.save(ingredient);
+    }
+
+    @Override
+    public List<Ingredient> getAll() {
+        return ingredientRepository.findAll();
     }
 
     @Override

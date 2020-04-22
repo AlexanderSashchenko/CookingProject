@@ -21,7 +21,7 @@ public class Ingredient {
     @ManyToOne
     private PrimaryMeasureType primaryMeasureType;
     @ManyToMany
-    private Set<MeasureType> measureEntityTypes;
+    private Set<MeasureType> measureTypes;
     private Integer caloriesPerHundredGrams;
     private Double proteinPerHundredGrams;
     private Double fatPerHundredGrams;

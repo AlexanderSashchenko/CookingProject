@@ -4,8 +4,6 @@ import com.example.cooking.model.MealCategory;
 import com.example.cooking.repository.MealCategoryRepository;
 import com.example.cooking.service.MealCategoryService;
 
-import java.util.Optional;
-
 public class MealCategoryServiceImpl implements MealCategoryService {
 
     private final MealCategoryRepository mealCategoryRepository;
@@ -20,8 +18,8 @@ public class MealCategoryServiceImpl implements MealCategoryService {
     }
 
     @Override
-    public Optional<MealCategory> get(Long id) {
-        return mealCategoryRepository.findById(id);
+    public MealCategory get(Long id) {
+        return mealCategoryRepository.getOne(id);
     }
 
     @Override

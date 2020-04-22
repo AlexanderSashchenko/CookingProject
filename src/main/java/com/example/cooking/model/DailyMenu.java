@@ -1,14 +1,13 @@
 package com.example.cooking.model;
 
-import lombok.Data;
-
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import java.util.Set;
+import lombok.Data;
 
 @Entity
 @Data
@@ -19,5 +18,5 @@ public class DailyMenu {
     @ManyToOne
     private User user;
     @ManyToMany
-    private Set<MealEating> mealEatings;
+    private Set<Meal> meals;
 }

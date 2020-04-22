@@ -4,8 +4,6 @@ import com.example.cooking.model.Portion;
 import com.example.cooking.repository.PortionRepository;
 import com.example.cooking.service.PortionService;
 
-import java.util.Optional;
-
 public class PortionServiceImpl implements PortionService {
 
     private final PortionRepository portionRepository;
@@ -20,8 +18,8 @@ public class PortionServiceImpl implements PortionService {
     }
 
     @Override
-    public Optional<Portion> get(Long id) {
-        return portionRepository.findById(id);
+    public Portion get(Long id) {
+        return portionRepository.findById(id).orElse(new Portion());
     }
 
     @Override

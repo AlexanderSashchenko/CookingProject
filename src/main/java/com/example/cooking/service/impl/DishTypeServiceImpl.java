@@ -4,8 +4,6 @@ import com.example.cooking.model.DishType;
 import com.example.cooking.repository.DishTypeRepository;
 import com.example.cooking.service.DishTypeService;
 
-import java.util.Optional;
-
 public class DishTypeServiceImpl implements DishTypeService {
 
     private final DishTypeRepository dishTypeRepository;
@@ -20,8 +18,9 @@ public class DishTypeServiceImpl implements DishTypeService {
     }
 
     @Override
-    public Optional<DishType> get(Long id) {
-        return dishTypeRepository.findById(id);
+    public DishType get(Long id) {
+        return dishTypeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Dish type was not found!"));
     }
 
     @Override
