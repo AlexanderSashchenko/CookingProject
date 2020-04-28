@@ -29,6 +29,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User getByEmail(String email) {
+        return userRepository.findByEmail(email).orElseThrow(() ->
+                new RuntimeException("User was not found!"));
+    }
+
+    @Override
     public void delete(User user) {
         userRepository.delete(user);
     }

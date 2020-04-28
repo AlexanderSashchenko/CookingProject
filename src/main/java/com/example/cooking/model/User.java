@@ -19,6 +19,8 @@ public class User {
     private String password;
     private String email;
     @ManyToMany
+    private Set<Role> roles;
+    @ManyToMany
     private Set<Ingredient> myIngredients;
     @ManyToMany
     private Set<Recipe> myRecipes;
