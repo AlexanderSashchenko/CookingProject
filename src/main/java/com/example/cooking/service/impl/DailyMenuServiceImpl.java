@@ -3,9 +3,10 @@ package com.example.cooking.service.impl;
 import com.example.cooking.model.DailyMenu;
 import com.example.cooking.repository.DailyMenuRepository;
 import com.example.cooking.service.DailyMenuService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DailyMenuServiceImpl implements DailyMenuService {
-
     private final DailyMenuRepository dailyMenuRepository;
 
     public DailyMenuServiceImpl(DailyMenuRepository dailyMenuRepository) {

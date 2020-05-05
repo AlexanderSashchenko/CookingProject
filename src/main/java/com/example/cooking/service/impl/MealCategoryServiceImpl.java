@@ -3,9 +3,10 @@ package com.example.cooking.service.impl;
 import com.example.cooking.model.MealCategory;
 import com.example.cooking.repository.MealCategoryRepository;
 import com.example.cooking.service.MealCategoryService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MealCategoryServiceImpl implements MealCategoryService {
-
     private final MealCategoryRepository mealCategoryRepository;
 
     public MealCategoryServiceImpl(MealCategoryRepository mealCategoryRepository) {

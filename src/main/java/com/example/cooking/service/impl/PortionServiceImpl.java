@@ -3,9 +3,10 @@ package com.example.cooking.service.impl;
 import com.example.cooking.model.Portion;
 import com.example.cooking.repository.PortionRepository;
 import com.example.cooking.service.PortionService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PortionServiceImpl implements PortionService {
-
     private final PortionRepository portionRepository;
 
     public PortionServiceImpl(PortionRepository portionRepository) {

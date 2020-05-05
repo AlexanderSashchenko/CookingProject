@@ -3,9 +3,10 @@ package com.example.cooking.service.impl;
 import com.example.cooking.model.Role;
 import com.example.cooking.repository.RoleRepository;
 import com.example.cooking.service.RoleService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RoleServiceImpl implements RoleService {
-
     private final RoleRepository roleRepository;
 
     public RoleServiceImpl(RoleRepository roleRepository) {

@@ -6,14 +6,13 @@ import lombok.Data;
 
 @Data
 public class RecipeResponseDto {
-
     private long id;
     private String name;
     private String description;
     //TODO: File photo
     private List<Long> dishTypeIds;
     private List<Long> mealTimeIds;
-    private Map<Long, Integer> ingredients;
+    private Map<Long, Long> ingredients;
     private List<Long> portionIds;
     private int preparationTime;
 }

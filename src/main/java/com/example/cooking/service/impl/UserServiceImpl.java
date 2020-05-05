@@ -3,9 +3,10 @@ package com.example.cooking.service.impl;
 import com.example.cooking.model.User;
 import com.example.cooking.repository.UserRepository;
 import com.example.cooking.service.UserService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserService {
-
     private final UserRepository userRepository;
 
     public UserServiceImpl(UserRepository userRepository) {

@@ -3,9 +3,10 @@ package com.example.cooking.service.impl;
 import com.example.cooking.model.MeasureType;
 import com.example.cooking.repository.MeasureTypeRepository;
 import com.example.cooking.service.MeasureTypeService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MeasureTypeServiceImpl implements MeasureTypeService {
-
     private final MeasureTypeRepository measureTypeRepository;
 
     public MeasureTypeServiceImpl(MeasureTypeRepository measureTypeRepository) {

@@ -4,9 +4,10 @@ import com.example.cooking.model.Recipe;
 import com.example.cooking.repository.RecipeRepository;
 import com.example.cooking.service.RecipeService;
 import java.util.List;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RecipeServiceImpl implements RecipeService {
-
     private final RecipeRepository recipeRepository;
 
     public RecipeServiceImpl(RecipeRepository recipeRepository) {
