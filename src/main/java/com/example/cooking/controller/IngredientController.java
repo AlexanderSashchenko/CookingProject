@@ -17,10 +17,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/ingredients")
 public class IngredientController {
-
     private final IngredientService ingredientService;
     private final MealCategoryService mealCategoryService;
     private final PrimaryMeasureTypeService primaryMeasureTypeService;
@@ -37,7 +38,7 @@ public class IngredientController {
     }
 
     @PostMapping
-    public String add(@RequestBody IngredientRequestDto ingredientRequestDto) {
+    public String add(@RequestBody @Valid IngredientRequestDto ingredientRequestDto) {
         ingredientService.add(convertDtoToEntity(ingredientRequestDto));
         return "Ingredient was successfully added";
     }
@@ -57,7 +58,7 @@ public class IngredientController {
 
     @PostMapping("/{id}")
     public String update(@PathVariable("id") Long id,
-                             @RequestBody IngredientRequestDto ingredientRequestDto) {
+                             @RequestBody @Valid IngredientRequestDto ingredientRequestDto) {
         Ingredient ingredient = convertDtoToEntity(ingredientRequestDto);
         ingredient.setId(id);
         ingredientService.update(ingredient);

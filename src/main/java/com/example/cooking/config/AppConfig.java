@@ -12,7 +12,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
         "com.example.cooking.service"
 })
 public class AppConfig {
-
     @Bean
     public PasswordEncoder getEncoder() {
         return new BCryptPasswordEncoder();

@@ -5,7 +5,6 @@ import lombok.Data;
 
 @Data
 public class UserRegistrationDto {
-
     @NotEmpty(message = "Entered value must not be empty")
     //TODO: add email validator annotation
     private String email;

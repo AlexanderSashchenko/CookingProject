@@ -2,11 +2,8 @@ package com.example.cooking.service;
 
 import com.example.cooking.model.Ingredient;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public interface IngredientService {
-
     Ingredient add(Ingredient ingredient);
 
     Ingredient get(Long id);

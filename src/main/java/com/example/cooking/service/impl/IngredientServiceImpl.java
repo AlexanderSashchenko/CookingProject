@@ -4,9 +4,10 @@ import com.example.cooking.model.Ingredient;
 import com.example.cooking.repository.IngredientRepository;
 import com.example.cooking.service.IngredientService;
 import java.util.List;
+import org.springframework.stereotype.Service;
 
+@Service
 public class IngredientServiceImpl implements IngredientService {
-
     private final IngredientRepository ingredientRepository;
 
     public IngredientServiceImpl(IngredientRepository ingredientRepository) {
