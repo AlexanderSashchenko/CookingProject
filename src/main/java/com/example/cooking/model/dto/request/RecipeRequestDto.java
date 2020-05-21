@@ -2,12 +2,11 @@ package com.example.cooking.model.dto.request;
 
 import java.util.List;
 import java.util.Map;
-import lombok.Data;
-
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
+import lombok.Data;
 
 @Data
 public class RecipeRequestDto {

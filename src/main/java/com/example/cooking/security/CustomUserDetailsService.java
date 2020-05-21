@@ -5,11 +5,15 @@ import com.example.cooking.model.User;
 import com.example.cooking.service.UserService;
 import java.util.Set;
 import java.util.stream.Collectors;
+import org.springframework.context.annotation.Primary;
 import org.springframework.security.core.userdetails.User.UserBuilder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
+@Primary
 public class CustomUserDetailsService implements UserDetailsService {
     private final UserService userService;
 

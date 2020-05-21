@@ -2,13 +2,16 @@ package com.example.cooking.model;
 
 import java.util.Set;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import lombok.Data;
 
 @Entity
+@Table(name = "users")
 @Data
 public class User {
     @Id
@@ -18,10 +21,6 @@ public class User {
     private String login;
     private String password;
     private String email;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
-    @ManyToMany
-    private Set<Ingredient> myIngredients;
-    @ManyToMany
-    private Set<Recipe> myRecipes;
 }
