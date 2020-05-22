@@ -4,11 +4,10 @@ import com.example.cooking.model.Role;
 import com.example.cooking.model.User;
 import com.example.cooking.service.RoleService;
 import com.example.cooking.service.UserService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import java.util.HashSet;
 import java.util.Set;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class InitializationController {
